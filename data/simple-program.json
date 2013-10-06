@@ -1,0 +1,22 @@
+{
+	"name": "program 1",
+	"description": "Simple program that alternately switches two devices on and off",
+	"devices": [
+	  { "name": "device1" },
+	  { "name": "device2" }
+	],
+	"sequences": [
+	  { "duration": 20000,
+	    "events": [ 
+        { "timeIndex": 0, "actions": [ 
+          { "device": "device1", "status": "on" },
+          { "device": "device2", "status": "off" }
+        ] },
+        { "timeIndex": 1000, "actions": [ 
+          { "device": "device1", "status": "off" },
+          { "device": "device2", "status": "on" }
+        ] }
+      ]
+    }
+  ]
+}
