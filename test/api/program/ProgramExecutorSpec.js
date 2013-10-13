@@ -1,5 +1,5 @@
 /*
- * seqex: test/integration/routes.js
+ * seqex: test/api/program/ProgramExecutorSpec.js
  * https://github.com/jbrule/seqex
  *
  * Copyright (c) 2013 Jon Brule
@@ -8,10 +8,13 @@
 (function() {
   'use strict';
 
+  // module dependencies
+  require('../../../utils');
   var chai = require('chai');
   var expect = chai.expect;
-  var ProgramExecutor = require('../lib/api/program/ProgramExecutor');
+  var ProgramExecutor = requireLib('/api/program/ProgramExecutor');
 
+  // test program data
   var program = {
     id: 123,
     name: 'Program1'
