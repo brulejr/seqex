@@ -96,6 +96,7 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['bower:install', 'jshint', 'cafemocha'])
-  grunt.registerTask('test', ['jshint', 'cafemocha'])
+  //grunt.registerTask('test', ['jshint', 'cafemocha'])
+  grunt.registerTask('test', ['cafemocha'])
 
 }
