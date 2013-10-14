@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -51,19 +53,13 @@ module.exports = function(grunt) {
 
     jshint: {
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: 'test/.jshintrc'
       },
       gruntfile: {
         src: 'Gruntfile.js'
       },
       lib: {
         src: ['lib/**/*.js']
-      },
-      test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['test/**/*.js']
       }
     },
 
@@ -82,21 +78,21 @@ module.exports = function(grunt) {
       }
     }
     
-  })
+  });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-concat')
-  grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.loadNpmTasks('grunt-contrib-jshint')
-  grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // mocha tasks
-  grunt.loadNpmTasks('grunt-cafe-mocha')
-  grunt.loadNpmTasks('grunt-bower-task')
+  grunt.loadNpmTasks('grunt-cafe-mocha');
+  grunt.loadNpmTasks('grunt-bower-task');
 
   // Default task.
-  grunt.registerTask('default', ['bower:install', 'jshint', 'cafemocha'])
-  //grunt.registerTask('test', ['jshint', 'cafemocha'])
-  grunt.registerTask('test', ['cafemocha'])
+  grunt.registerTask('default', ['bower:install', 'jshint', 'cafemocha']);
+  grunt.registerTask('test', ['jshint', 'cafemocha']);
 
-}
+};
+

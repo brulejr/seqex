@@ -3,7 +3,6 @@
   "globalstrict": true,
   "strict": false,
   "curly": true,
-  "eqeqeq": true,
   "immed": true,
   "latedef": true,
   "newcap": true,
@@ -16,6 +15,7 @@
   "node": true,
   "es5": true,
   "laxcomma": true,
+  "globals": { "requireLib": false },
   "predef": [
     "describe",
     "it",      
