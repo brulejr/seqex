@@ -28,6 +28,7 @@
   "dependencies": {
     "config": "~0.4.x",
     "hapi": "1.13.0",
+    "hoek": "1.1.x",
     "log4js": "~0.6.x",
     "nork-hash": "~0.0.4",
     "pkginfo": "~0.3.0",

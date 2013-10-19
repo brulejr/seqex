@@ -1,10 +1,10 @@
 {
 	"name": "program 1",
 	"description": "Simple program that alternately switches two devices on and off",
-	"devices": [
-	  { "name": "device1" },
-	  { "name": "device2" }
-	],
+	"devices": {
+    "device1": { "description": "This is device #1" },
+    "device2": { "description": "This is device #2" }
+  },
 	"sequences": [
 	  { "duration": 20000,
 	    "events": [ 
