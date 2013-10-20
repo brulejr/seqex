@@ -12,8 +12,9 @@
   require('../../../utils');
   var chai = require('chai');
   var expect = chai.expect;
-  var Device = requireLib('/api/program/Device');
-
+  var DeviceAPI = requireLib('/api/program/Device');
+  var Device = DeviceAPI.Device;
+  
   // test device data
   var device_good = {
     id: "DEVICE_1",
@@ -46,7 +47,7 @@
         var badConstructor = function() {
           return new Device(device_bad);
         };
-        expect(badConstructor).to.throw(Error);
+        expect(badConstructor).to.throw(DeviceAPI.DeviceError);
       });
 
     });
