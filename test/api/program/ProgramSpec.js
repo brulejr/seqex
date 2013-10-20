@@ -12,30 +12,17 @@
   require('../../../utils');
   var chai = require('chai');
   var expect = chai.expect;
-  var Program = requireLib('/api/program/Program');
+  var ProgramAPI = requireLib('/api/program/Program');
+  var Program = ProgramAPI.Program;
 
   // test program data
-  var program = {
-    name: "program 1",
-    description: "Simple program that alternately switches two devices on and off",
-    devices: {
-      device1: { description: "This is device #1" },
-      device2: { description: "This is device #2" }
-    },
-    sequences: [
-      { duration: 20000,
-        events: [ 
-          { timeIndex: 0, actions: [ 
-            { device: "device1", status: "on" },
-            { device: "device2", status: "off" }
-          ] },
-          { timeIndex: 1000, actions: [ 
-            { device: "device1", status: "off" },
-            { device: "device2", status: "on" }
-          ] }
-        ]
-      }
-    ]
+  var program_good_1 = {
+    name: "Program 1",
+    description: "This is Program #1"
+  };
+
+  var program_bad_1 = {
+    description: "This is Program #1 - Bad"
   };
 
 
@@ -47,10 +34,19 @@
 
     describe('constructor', function () {
 
-      var pexec = new Program(program);
-
       it('should build a new instance', function() {
-        expect(pexec).to.not.be.undefined;
+        var program = new Program(program_good_1);
+        expect(program).to.not.be.undefined;
+        expect(program).to.have.property('name', 'Program 1');
+        expect(program).to.have.property('description', 'This is Program #1');
+      });
+
+
+      it('should throw an error for bad data', function() {
+        var badConstructor = function() {
+          return new Program(program_bad_1);
+        };
+        expect(badConstructor).to.throw(ProgramAPI.ProgramError);
       });
 
     });
