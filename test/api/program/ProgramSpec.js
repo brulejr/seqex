@@ -18,7 +18,11 @@
   // test program data
   var program_good_1 = {
     name: "Program 1",
-    description: "This is Program #1"
+    description: "This is Program #1",
+    script: [
+      { "offset": 250, "actions": [ { "device": "DEVICE_1", "action": "ON" } ] },
+      { "offset": 500, "actions": [ { "device": "DEVICE_1", "action": "OFF" } ] }
+    ]
   };
 
   var program_bad_1 = {
@@ -39,14 +43,14 @@
         expect(program).to.not.be.undefined;
         expect(program).to.have.property('name', 'Program 1');
         expect(program).to.have.property('description', 'This is Program #1');
+        expect(program).to.have.property('script');
       });
 
 
       it('should throw an error for bad data', function() {
-        var badConstructor = function() {
+        expect(function() {
           return new Program(program_bad_1);
-        };
-        expect(badConstructor).to.throw(ProgramAPI.ProgramError);
+        }).to.throw(ProgramAPI.ProgramError);
       });
 
     });

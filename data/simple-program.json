@@ -1,22 +1,9 @@
 {
-	"name": "program 1",
-	"description": "Simple program that alternately switches two devices on and off",
-	"devices": {
-    "device1": { "description": "This is device #1" },
-    "device2": { "description": "This is device #2" }
-  },
-	"sequences": [
-	  { "duration": 20000,
-	    "events": [ 
-        { "timeIndex": 0, "actions": [ 
-          { "device": "device1", "status": "on" },
-          { "device": "device2", "status": "off" }
-        ] },
-        { "timeIndex": 1000, "actions": [ 
-          { "device": "device1", "status": "off" },
-          { "device": "device2", "status": "on" }
-        ] }
-      ]
-    }
+  "name": "Program 1",
+  "description": "This is Program #1",
+  "duration": 20000,
+  "script": [
+    { "offset": 250, "actions": [ { "device": "DEVICE_1", "action": "ON" } ] },
+    { "offset": 500, "actions": [ { "device": "DEVICE_1", "action": "OFF" } ] }
   ]
 }
