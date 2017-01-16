@@ -16,7 +16,7 @@ For building, it uses:
 
 For testing, it uses:
 
-* [mocha](http://visionmedia.github.io/mocha/)
+* [mocha](http://mochajs.org/)
 * [chai](http://chaijs.com/)
 * [sinon](http://sinonjs.org/)
 
